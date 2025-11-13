@@ -1,0 +1,19 @@
+{
+  "name": "iot-motion-simulator",
+  "version": "1.0.0",
+  "description": "Simulateur de capteur de mouvement pour le projet IoT",
+  "main": "motion-sensor-simulator.js",
+  "scripts": {
+    "start": "node motion-sensor-simulator.js"
+  },
+  "dependencies": {
+    "mqtt": "^4.3.7"
+  },
+  "keywords": [
+    "iot",
+    "mqtt",
+    "simulator"
+  ],
+  "author": "IoT Project",
+  "license": "MIT"
+}
