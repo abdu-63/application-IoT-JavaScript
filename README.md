@@ -153,5 +153,3 @@ Ce projet répond à l'ensemble des exigences du projet de cours IoT :
 3. Commitez vos modifications
 4. Poussez la branche
 5. Créez une pull request
-
-# application-IoT-JavaScript
