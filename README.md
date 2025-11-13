@@ -90,7 +90,9 @@ Une solution IoT complète pour surveiller la température, l'humidité, les mou
    npm install
    ```
 
-3. Démarrer le serveur backend :
+3. Configurer les variables d'environnement dans le fichier `.env` (par exemple adapter `MONGODB_URI` avec l'URI de votre instance MongoDB).
+
+4. Démarrer le serveur backend :
    ```bash
    npm run dev
    ```
