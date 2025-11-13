@@ -70,7 +70,9 @@ Une solution IoT complète pour surveiller la température, l'humidité, les mou
 
 Allez dans le dossier backend/ et créez-y un fichier nommé .env.
 Ajoutez cette ligne dans le fichier :
-```MONGODB_URI=mongodb+srv://<db_user>:<db_password>@cluster0.z1drbht.mongodb.net/iot-dashboard?retryWrites=true&w=majority```
+```
+MONGODB_URI=mongodb+srv://<db_user>:<db_password>@cluster0.z1drbht.mongodb.net/iot-dashboard?retryWrites=true&w=majority
+```
 Remplacez **<db_user>** par votre utilisateur MongoDB et **<db_password>** par son mot de passe.
 
 ### Développement frontend
