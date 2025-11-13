@@ -1,131 +1,148 @@
-# IoT Temperature Monitoring System
+# Système de surveillance de température IoT
 
-A complete IoT solution for monitoring temperature, humidity, motion, and light levels with real-time alerts and device control.
+Une solution IoT complète pour surveiller la température, l'humidité, les mouvements et le niveau de luminosité, avec alertes en temps réel et contrôle des dispositifs.
 
-## Project Structure
+## Structure du projet
 
 ```
-├── backend/              # Node.js backend with Express.js
-├── docs/                 # Project documentation
-├── firmware/             # ESP32 firmware for IoT devices
-├── public/               # Static assets
-├── src/                  # Frontend React application
-│   ├── components/       # React components
-│   ├── pages/            # Page components
-│   ├── services/         # Service modules
-│   └── ...               # Other frontend files
-├── README.md             # This file
-└── package.json          # Frontend dependencies
+├── backend/              # Backend Node.js avec Express.js
+├── docs/                 # Documentation du projet
+├── firmware/             # Firmware ESP32 pour les dispositifs IoT
+├── public/               # Ressources statiques
+├── src/                  # Application frontend React
+│   ├── components/       # Composants React
+│   ├── pages/            # Pages de l'application
+│   ├── services/         # Modules de service
+│   └── ...               # Autres fichiers frontend
+├── README.md             # Ce fichier
+└── package.json          # Dépendances du frontend
 ```
 
-## Features
+## Fonctionnalités
 
-- Real-time sensor monitoring (temperature, humidity, motion, light)
-- User authentication with JWT
-- Device control (on/off)
-- Configurable alert thresholds
-- Historical data viewing
-- Responsive web interface
-- MQTT communication with IoT devices
-- Security by design principles
+- Surveillance temps réel des capteurs (température, humidité, mouvement, luminosité)
+- Authentification utilisateur avec JWT
+- Contrôle des dispositifs (on/off)
+- Seuils d'alerte configurables
+- Visualisation des données historiques
+- Interface web responsive
+- Communication MQTT avec les dispositifs IoT
+- Principes « security by design »
+- Simulateur de capteur de mouvement pour tester sans matériel physique
 
-## Technology Stack
+## Pile technologique
 
 ### Frontend
-- React.js with TypeScript
-- Vite build tool
-- shadcn/ui components
+- React.js avec TypeScript
+- Outil de build Vite
+- Composants shadcn/ui
 - Tailwind CSS
-- Socket.IO client
+- Client Socket.IO
 
 ### Backend
 - Node.js
 - Express.js
-- MongoDB with Mongoose
-- JWT for authentication
-- MQTT client
+- MongoDB avec Mongoose
+- JWT pour l'authentification
+- Client MQTT
 - Socket.IO
 
-### IoT Devices
-- ESP32 microcontroller
-- DHT22 temperature/humidity sensor
-- PIR motion sensor
-- Light sensor
+### Dispositifs IoT
+- Microcontrôleur ESP32
+- Capteur de température/humidité DHT22
+- Capteur de mouvement PIR
+- Capteur de luminosité
 
 ### Infrastructure
-- MongoDB database
-- MQTT broker (Mosquitto)
+- Base de données MongoDB
+- Broker MQTT (Mosquitto)
 
-## Quick Start
+## Démarrage rapide
 
-### Prerequisites
+### Prérequis
 
-- Node.js (v16 or higher)
+- Node.js (v16 ou supérieur)
 - MongoDB
-- MQTT broker (Mosquitto)
-- Arduino IDE (for ESP32 firmware)
+- Broker MQTT (Mosquitto)
+- Arduino IDE (pour le firmware ESP32)
 
-### Frontend Development
+### Développement frontend
 
-1. Install dependencies:
+1. Installer les dépendances :
    ```bash
    npm install
    ```
 
-2. Start the development server:
+2. Démarrer le serveur de développement :
    ```bash
    npm run dev
    ```
 
-### Backend Development
+### Développement backend
 
-1. Navigate to the backend directory:
+1. Aller dans le répertoire backend :
    ```bash
    cd backend
    ```
 
-2. Install dependencies:
+2. Installer les dépendances :
    ```bash
    npm install
    ```
 
-3. Start the backend server:
+3. Démarrer le serveur backend :
    ```bash
    npm run dev
    ```
 
 ### Documentation
 
-Detailed documentation is available in the `docs/` directory:
-- [System Architecture](docs/architecture.md)
-- [Security Implementation](docs/security.md)
-- [User Manual](docs/user-manual.md)
+Une documentation détaillée est disponible dans le répertoire `docs/` :
+- [Architecture du système](docs/architecture.md)
+- [Implémentation de la sécurité](docs/security.md)
+- [Manuel utilisateur](docs/user-manual.md)
 
-### ESP32 Firmware
+### Firmware ESP32
 
-The firmware for ESP32 devices is located in the `firmware/` directory. See `firmware/README.md` for installation instructions.
+Le firmware pour les dispositifs ESP32 se trouve dans le répertoire `firmware/`. Consultez `firmware/README.md` pour les instructions d'installation.
 
-## Project Requirements
+### Simulateur de capteur de mouvement
 
-This project fulfills all requirements from the IoT course project:
+Pour tester le système sans capteur PIR physique, un simulateur de capteur de mouvement est fourni dans le répertoire `simulator/` :
 
-1. ✅ Microcontroller implementation (ESP32)
-2. ✅ Sensor integration (temperature, humidity, motion, light)
-3. ✅ Web interface with React.js
-4. ✅ Backend with Node.js/Express.js
-5. ✅ Database storage (MongoDB)
-6. ✅ Real-time communication (MQTT/WebSocket)
-7. ✅ User authentication (JWT)
-8. ✅ Security by design principles
-9. ✅ Alerting system
-10. ✅ Device control capabilities
+1. Assurez-vous qu'un broker MQTT local est en cours d'exécution (par défaut : `mqtt://localhost:1883`).
+2. Installez la dépendance MQTT si nécessaire :
+   ```bash
+   npm install mqtt
+   ```
+3. Lancez le script du simulateur :
+   ```bash
+   node simulator/motion-sensor-simulator.js
+   ```
 
-## Contributing
+Le simulateur publie périodiquement de fausses valeurs de température, d'humidité, de mouvement et de luminosité vers le broker. Ces données sont ensuite affichées dans le tableau de bord et stockées dans l'historique.
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a pull request
+## Exigences du projet
+
+Ce projet répond à l'ensemble des exigences du projet de cours IoT :
+
+1. ✅ Implémentation microcontrôleur (ESP32)
+2. ✅ Intégration de capteurs (température, humidité, mouvement, luminosité)
+3. ✅ Interface web avec React.js
+4. ✅ Backend avec Node.js/Express.js
+5. ✅ Stockage en base de données (MongoDB)
+6. ✅ Communication temps réel (MQTT/WebSocket)
+7. ✅ Authentification utilisateur (JWT)
+8. ✅ Principes de sécurité « security by design »
+9. ✅ Système d'alertes
+10. ✅ Capacités de contrôle des dispositifs
+
+## Contribution
+
+1. Forkez le dépôt
+2. Créez une branche de fonctionnalité
+3. Commitez vos modifications
+4. Poussez la branche
+5. Créez une pull request
 
 # application-IoT-JavaScript
