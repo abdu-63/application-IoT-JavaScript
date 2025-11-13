@@ -77,12 +77,17 @@ Remplacez **<db_user>** par votre utilisateur MongoDB et **<db_password>** par s
 
 ### Développement frontend
 
-1. Installer les dépendances :
+1. Aller dans le répertoire frontend :
+   ```bash
+   cd frontend
+   ```
+   
+2. Installer les dépendances :
    ```bash
    npm install
    ```
 
-2. Démarrer le serveur de développement :
+3. Démarrer le serveur de développement :
    ```bash
    npm run dev
    ```
