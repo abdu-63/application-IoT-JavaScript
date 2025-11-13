@@ -66,17 +66,8 @@ Une solution IoT complète pour surveiller la température, l'humidité, les mou
 - Broker MQTT (Mosquitto)
 - Arduino IDE (pour le firmware ESP32)
 
-### Configuration du backend (.env)
-
-Allez dans le dossier backend/ et créez-y un fichier nommé .env.
-Ajoutez cette ligne dans le fichier :
-```
-MONGODB_URI=mongodb+srv://<db_user>:<db_password>@cluster0.z1drbht.mongodb.net/iot-dashboard?retryWrites=true&w=majority
-```
-Remplacez **<db_user>** par votre utilisateur MongoDB et **<db_password>** par son mot de passe.
-
 ### Développement frontend
-   
+
 1. Installer les dépendances :
    ```bash
    npm install
@@ -128,16 +119,26 @@ Pour tester le système sans capteur PIR physique, un simulateur de capteur de m
    ```bash
    node simulator/motion-sensor-simulator.js
    ```
-
+Vous pouvez également lancer le simulateur via le script pratique :
+```bash
+./start-simulator.sh
+```
 Le simulateur publie périodiquement de fausses valeurs de température, d'humidité, de mouvement et de luminosité vers le broker. Ces données sont ensuite affichées dans le tableau de bord et stockées dans l'historique.
 
 ## Exigences du projet
 
 Ce projet répond à l'ensemble des exigences du projet de cours IoT :
 
-1. ✅ Implémentation microcontrôleur (ESP32)
-2. ✅ Intégration de capteurs (température, humidité, mouvement, luminosité)
-3. ✅ Interface web avec React.js
+1. Implémentation microcontrôleur (ESP32)
+2. Intégration de capteurs (température, humidité, mouvement, luminosité)
+3. Interface web avec React.js
+4. Backend avec Node.js/Express.js
+5. Stockage en base de données (MongoDB)
+6. Communication temps réel (MQTT/WebSocket)
+7. Authentification utilisateur (JWT)
+8. Principes de sécurité « security by design »
+9. Système d'alertes
+10. Capacités de contrôle des dispositifs
 4. ✅ Backend avec Node.js/Express.js
 5. ✅ Stockage en base de données (MongoDB)
 6. ✅ Communication temps réel (MQTT/WebSocket)
@@ -153,3 +154,5 @@ Ce projet répond à l'ensemble des exigences du projet de cours IoT :
 3. Commitez vos modifications
 4. Poussez la branche
 5. Créez une pull request
+
+# application-IoT-JavaScript
